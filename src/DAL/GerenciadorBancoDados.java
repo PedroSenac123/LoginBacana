@@ -276,7 +276,7 @@ public class GerenciadorBancoDados {
     public ArrayList<CadastroUsuarioModel> recuperarDadosUsuarioBD(String id_user) {
 
         ArrayList<CadastroUsuarioModel> listaFiltrada = new ArrayList<>();
-        String sql = "SELECT * from TB_USERS where id=?";
+        String sql = "SELECT * from TB_USERS where id_user=?";
         PreparedStatement pst = null;
         ResultSet rs = null;
         Connection connection = null;

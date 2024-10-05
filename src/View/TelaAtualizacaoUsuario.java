@@ -15,6 +15,7 @@ public class TelaAtualizacaoUsuario extends javax.swing.JFrame {
 
     public TelaAtualizacaoUsuario() {
         initComponents();
+        txtIdUser.setEnabled(false);
     }
 
     /**

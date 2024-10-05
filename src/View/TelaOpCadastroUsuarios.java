@@ -29,6 +29,7 @@ public class TelaOpCadastroUsuarios extends javax.swing.JFrame {
         btnAtualizar.setEnabled(false);
         btnAtualizarUsuario.setEnabled(false);
         btnExcluir.setEnabled(false);
+        btnAtualizarBD.setEnabled(false);
     }
 
     /**
@@ -338,6 +339,10 @@ public class TelaOpCadastroUsuarios extends javax.swing.JFrame {
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         atualizarDadosTabela();
+        btnAtualizar.setEnabled(false);
+        btnAtualizarUsuario.setEnabled(false);
+        btnExcluir.setEnabled(false);
+        btnAtualizarBD.setEnabled(false);
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnInserirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirUsuarioActionPerformed
@@ -392,6 +397,7 @@ public class TelaOpCadastroUsuarios extends javax.swing.JFrame {
         btnExcluir.setEnabled(true);
         btnAtualizar.setEnabled(true);
         btnAtualizarUsuario.setEnabled(true);
+        btnAtualizarBD.setEnabled(true);
     }//GEN-LAST:event_tbListaUsuariosMouseClicked
 
     private void btnAtualizarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarBDActionPerformed
@@ -399,11 +405,12 @@ public class TelaOpCadastroUsuarios extends javax.swing.JFrame {
         String id_user = tbListaUsuarios.getValueAt(linhaSelecionada, 0).toString();
 
         CadastroUsuariosController filtroController = new CadastroUsuariosController();
-        ArrayList<CadastroUsuarioModel> listaUsuarios = filtroController.filtrarUsuarios(id_user);
+       
+        ArrayList<CadastroUsuarioModel> listaUsuarios = filtroController.recuperarDadosUsuarioController(id_user);
 
         TelaRecuperacaoDados tela = new TelaRecuperacaoDados();
         for (CadastroUsuarioModel usuario : listaUsuarios) {
-            tela.atualizaCamposTela(usuario);
+            tela.recuperaCamposTela(usuario);
         }
         tela.setVisible(true);
     }//GEN-LAST:event_btnAtualizarBDActionPerformed

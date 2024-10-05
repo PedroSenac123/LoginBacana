@@ -16,6 +16,7 @@ public class TelaRecuperacaoDados extends javax.swing.JFrame {
 
     public TelaRecuperacaoDados() {
         initComponents();
+        txtIdUser.setEnabled(false);
     }
 
     /**
@@ -204,6 +205,12 @@ public class TelaRecuperacaoDados extends javax.swing.JFrame {
 
         jLabel1.setText("ID:");
         pnlDadosUsuario.add(jLabel1);
+
+        txtIdUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdUserActionPerformed(evt);
+            }
+        });
         pnlDadosUsuario.add(txtIdUser);
 
         lblNome.setText("Nome Completo:");
@@ -332,6 +339,10 @@ public class TelaRecuperacaoDados extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnResetSenhaActionPerformed
 
+    private void txtIdUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -412,7 +423,7 @@ public class TelaRecuperacaoDados extends javax.swing.JFrame {
     private javax.swing.JPanel txtPerfilUser;
     // End of variables declaration//GEN-END:variables
 
-    public void atualizaCamposTela(CadastroUsuarioModel usuario) {
+    public void recuperaCamposTela(CadastroUsuarioModel usuario) {
         
         txtIdUser.setText(usuario.getId());
         txtNomeCompleto.setText(usuario.getUsername());
